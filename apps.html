@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Tools-Mod Apps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).ico">
+    <style>
+        html {
+            background-image: linear-gradient(to right, #3378FF, #9443FE);
+        }
+
+        body {
+            height: 180vh;
+            margin: 8px;
+            background-repeat: no-repeat;
+            /* background-color: rgb(58, 58, 148); */
+            background-position: fixed;
+            background-size: cover;
+
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 11px;
+            overflow: hidden;
+            /* box-shadow: 5px 5px 20px -12px white; */
+
+        }
+
+        .pi {
+            overflow: hidden;
+            position: relative;
+            width: 284px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            /* height: 284px; */
+            animation-name: shake;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes shake {
+            25% {
+                top: 0px;
+                left: 8px;
+
+            }
+
+            50% {
+                top: 8px;
+                left: 8px;
+
+
+            }
+
+            75% {
+                top: 8px;
+                left: 0px;
+
+            }
+
+            100% {
+                top: 0px;
+                left: 0px;
+
+            }
+
+        }
+
+        .main {
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 12px;
+            margin-bottom: 80px;
+        }
+
+        .main h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: rgb(255, 255, 96);
+        }
+
+        .app {
+            border: 1px solid white;
+            border-radius: 8px;
+            height: 380px;
+            position: relative;
+            width: 100px;
+            padding: 8px;
+            margin: 14px;
+        }
+
+        * {
+            color: white;
+        }
+
+        .app_pic {
+            width: 100px;
+            height: 85px;
+            margin-bottom: 10px;
+        }
+
+        .app p {
+            text-align: center;
+            font-size: 15px;
+            margin-top: -2px;
+        }
+
+        .apps a {
+            text-decoration: none;
+        }
+
+        .down {
+            background-color: #48bdf3;
+            text-align: center;
+            border-radius: 6px;
+            padding: 6px;
+        }
+
+        .apps {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .instrctions {
+            border: 2px solid white;
+            background-color: #3B5998;
+            padding: 6px;
+            margin-top: 80px;
+        }
+
+        .instrctions h2 {
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+
+        }
+
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+            margin-left: 20px;
+        }
+
+        footer {
+            margin-top: 210px;
+            border-top: 2px solid rgb(34, 34, 100);
+            /* background-color: rgb(42, 42, 107); */
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .copy {
+            margin-top: 80px;
+            background: linear-gradient(to right, );
+            border-radius: 18px;
+        }
+
+        .copy p {
+            font-size: 18px;
+            color: black;
+            text-align: center;
+        }
+
+        .home {
+            border: 1px solid white;
+            border-radius: 10px;
+            background-color: transparent;
+            height: 22px;
+            width: 88px;
+            position: relative;
+            top: -50px;
+            margin: auto;
+            padding: 7px;
+            display: flex;
+            overflow: hidden;
+            justify-content: flex-end;
+
+
+        }
+
+        .home a {
+            font-size: 22px;
+            text-decoration: none;
+        }
+
+        .home .fa {
+            margin-right: 6px;
+            position: absolute;
+            left: -10%;
+            /* font-size: 28px; */
+            top: -30%;
+        }
+
+        .fa-home {
+            /* position: absolute; */
+            /* left: -10%; */
+            font-size: 28px;
+            /* top: -30%; */
+        }
+
+        #myInput {
+            color: white;
+            background-image: linear-gradient(to right, #558cfc, #a663fd);
+            width: 90%;
+            height: 24px;
+            font-size: 16px;
+            padding: 8px;
+            border-radius: 6px;
+            border: none;
+            border: 1px dotted white;
+        }
+
+        #myInput::placeholder {
+            color: white;
+        }
+
+        .srch {
+            display: flex;
+            justify-content: center;
+            /* border: 2px solid black; */
+            padding: 4px;
+        }
+
+        #myUL {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #myUL li {
+            list-style: none;
+
+        }
+
+        .ask_app {
+            background-image: linear-gradient(to right, #3378FF, #9443FE);
+            border: 1px dashed white;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            position: relative;
+            bottom: 2%;
+            padding: 10px;
+        }
+
+        .ask_app p {
+            color: white;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .ask_app h1{
+            color: rgb(255, 61, 61);
+        }
+
+        .ask_btn {
+            border: 1px solid white;
+            background-color: rgb(53, 238, 53);
+            border-radius: 6px;
+            margin: 4px;
+            padding: 6px;
+        }
+
+        .ask_btn:hover {
+            background-color: rgb(32, 202, 32);
+            transition: 150ms;
+        }
+
+        .ask_btn a {
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="//code.tidio.co/0cpqglvkbt7hvfstzxmqtpja5bylucxd.js" async></script>
+    <header>
+
+        <div class="pi">
+            <img id="pic" src="new logo 1.png" alt="Logo">
+        </div>
+    </header>
+    <div class="main">
+        <h1>Applications</h1>
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+
+                    }
+                }
+
+            }
+        </script>
+    </div>
+    <div class="home">
+        <a href="index.html"><i class="fa fa-home"></i> Home</a>
+    </div>
+    <div class="ask_app">
+        <h1>Notice!</h1>
+        <p> You can aslo ask to add new mod apps that you want to use.</p>
+        <div class="ask_btn">
+            <a href="Request app.html">Ask here</a>
+        </div>
+    </div>
+    <div class="srch">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for app..." title="Type in a name">
+    </div>
+    <div class="apps">
+        <!-- <a href="Uchat info.html">
+            <div class="app"><img class="app_pic" src="Uchat.png" alt="">
+                <p> Name : Uchat</p>
+
+                <p> Cost : Free</p>
+
+                <p>Size : --</p>
+
+                <p> Features : Free calls, text and voice messages and many more</p>
+                <div class="down">More info</div>
+            </div>
+
+        </a> -->
+        <ul id="myUL">
+            <li><a href="https://www.mediafire.com/file/wuii1ko624mr3pv/Netflix_-_Malik_Tools.apk/file">
+                    <div class="app"><img class="app_pic" src="netflix.png" alt="">
+                        <p> Name : Netflix</p>
+
+                        <p> Cost : Free</p>
+
+                        <p>Size : 13.5 MBs</p>
+
+                        <p> Features : No login required + premuim unlocked</p>
+                        <div class="down">Download</div>
+                    </div>
+
+                </a>
+            </li>
+            <li><a href="blackhole into.html">
+                    <div class="app"><img class="app_pic" src="blockhole.png" alt="">
+                        <p> Name : BlackHole</p>
+
+                        <p> Cost : Free</p>
+
+                        <p>Size : 28.4 MBs</p>
+
+                        <p> Features : Spotify & YouTube Music for free + Download</p>
+                        <div class="down">More info</div>
+                    </div>
+
+                </a>
+            </li>
+            <li> <a href="picsart info.html">
+                    <div class="app"><img class="app_pic" src="picsart.jpg" alt="">
+                        <p> Name : PicsArt</p>
+
+                        <p> Cost : Free</p>
+                        <p>Size : 57.6 MBs</p>
+                        <p> Features : Gold unlocked + All premuim features unlocked</p>
+                        <div class="down">More info</div>
+                    </div>
+                </a>
+            </li>
+            <li><a href="remini info.html">
+                    <div class="app"><img class="app_pic" src="remini.png" alt="">
+                        <p> Name : Remini Mod</p>
+
+                        <p> Cost : Free</p>
+
+                        <p>Size : 13.7 MBs</p>
+
+                        <p> Features : Enhance picture quality + Premium unlocked</p>
+                        <div class="down">More info</div>
+                    </div>
+
+                </a>
+            </li>
+            <li><a href="lumii info.html">
+                    <div class="app"><img class="app_pic" src="lumii.jpeg" alt="">
+                        <p> Name : Lumii Photo Eidtor</p>
+
+                        <p> Cost : Free</p>
+
+                        <p>Size : 13.5 MBs</p>
+
+                        <p> Features : All premuim unlocked</p>
+                        <div class="down">More info</div>
+                    </div>
+
+                </a>
+            </li>
+            <li> <a href="inshot info.html">
+                    <div class="app"><img class="app_pic" src="inshot.jpg" alt="">
+                        <p> Name : InShot</p>
+
+                        <p> Cost : Free</p>
+                        <p>Size : 66.4 MBs</p>
+                        <p> Features : All premuim effects and features unlocked</p>
+                        <div class="down">More info</div>
+                    </div>
+
+                </a>
+            </li>
+            <li><a href="ringz info.html">
+                    <div class="app"><img class="app_pic" src="Ringz.png" alt="">
+                        <p> Name : Ringz Mod</p>
+
+                        <p> Cost : Free</p>
+
+                        <p>Size : 11.2 MBs</p>
+
+                        <p> Features : Watch movies and web series + download for free.</p>
+                        <div class="down">Download</div>
+                    </div>
+
+                </a>
+            </li>
+            <li><a href="tamasha info.html">
+                    <div class="app"><img class="app_pic" src="tamasha.png" alt="">
+                        <p> Name : Tamasha Mod</p>
+
+                        <p> Cost : Free</p>
+
+                        <p>Size : 29.3 MBs</p>
+
+                        <p> Features : All channels & Movies unlocked</p>
+                        <div class="down">Download</div>
+                    </div>
+
+                </a>
+            </li>
+            <li> <a href="resume maker info.html">
+                    <div class="app"><img class="app_pic" src="CV maker.png" alt="">
+                        <p> Name : CV/ Resume Builder</p>
+
+                        <p> Cost : Free</p>
+                        <p>Size : 13.9 MBs</p>
+                        <p> Features : All premuim styles are unlocked </p>
+                        <div class="down">More Info</div>
+                    </div>
+
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <div class="instrctions">
+        <h2>Note Please</h2>
+        <ul>
+
+            <li>
+                <p>If you need any other app, then contact us. We'll upload modified app on your demand.</p>
+            </li>
+            <li>
+                <p>If you're facing any issue or need any help you can also contact me throught Facebook for instant
+                    response.</p>
+            </li>
+
+        </ul>
+
+    </div>
+    <footer>
+        <h1>Contact us</h1>
+        <div class="icon">
+
+            <a href="https://www.facebook.com/decentmalik.m" class="fa fa-facebook"></a>
+            <a href="https://mobile.twitter.com/Decent_malik35" class="fa fa-twitter"></a>
+        </div>
+        <!-- <ul> -->
+        <!-- <li><a href="https://www.facebook.com/decentmalik.m">Facebook</a></li> -->
+        <!-- <li><a href="https://mobile.twitter.com/Decent_malik35">Twitter</a></li> -->
+        <!-- </ul> -->
+
+    </footer>
+    <div class="copy">
+        <p>Malik &copy; 2022</p>
+    </div>
+
+</body>
+
+</html>

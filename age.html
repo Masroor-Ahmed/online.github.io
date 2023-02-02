@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).ico">
+    <style>
+        * {
+            color: white;
+        }
+
+        html {
+            background-image: linear-gradient(to right, #3378FF, #9443FE);
+        }
+
+        body {
+            /* background-color: rgb(58, 58, 148); */
+            padding: 8px;
+        }
+
+        @keyframes shake {
+            25% {
+                top: 0px;
+                left: 8px;
+
+            }
+
+            50% {
+                top: 8px;
+                left: 8px;
+
+
+            }
+
+            75% {
+                top: 8px;
+                left: 0px;
+
+            }
+
+            100% {
+                top: 0px;
+                left: 0px;
+
+            }
+
+        }
+
+        #pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 11px;
+            overflow: hidden;
+            /* box-shadow: 5px 5px 20px -12px white; */
+
+        }
+
+        .pi {
+            overflow: hidden;
+            position: relative;
+            width: 284px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            /* height: 284px; */
+            animation-name: shake;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        footer {
+            margin-top: 210px;
+            border-top: 2px solid rgb(34, 34, 100);
+            /* background-color: rgb(42, 42, 107); */
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 50px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+            margin-left: 20px;
+        }
+
+        .copy {
+            margin-top: 80px;
+            background: linear-gradient(to right, rgb(199, 199, 199), rgb(197, 197, 197), rgb(137, 149, 255));
+            border-radius: 18px;
+        }
+
+        .copy p {
+            font-size: 18px;
+            color: black;
+            text-align: center;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+
+
+    <title>Malik Tools | Online Age Calculator | Calculate Age from Date of Birth</title>
+    <meta property="og:title" content="Online Age Calculator" />
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/sub_full.css?1659694404">
+
+    <meta name="keywords" content="online age calculator, calculate age online" />
+    <meta name="description"
+        content="Free Online Age Calculator. Calculate your Age Online from your Date of Birth. Get your Age in Months, Days, Hours and Minutes!" />
+    <script>
+
+
+        var dat = new Date();
+        var curday = dat.getDate();
+        var curmon = dat.getMonth() + 1;
+        var curyear = dat.getFullYear();
+
+        function checkleapyear(datea) {
+            if (datea.getYear() % 4 == 0) {
+                if (datea.getYear() % 10 != 0) {
+                    return true;
+                } else {
+                    if (datea.getYear() % 400 == 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            return false;
+        }
+
+        function DaysInMonth(Y, M) {
+            with (new Date(Y, M, 1, 12)) {
+                setDate(0);
+                return getDate();
+            }
+        }
+
+        function datediff(date1, date2) {
+            var y1 = date1.getFullYear(),
+                m1 = date1.getMonth(),
+                d1 = date1.getDate(),
+                y2 = date2.getFullYear(),
+                m2 = date2.getMonth(),
+                d2 = date2.getDate();
+            if (d1 < d2) {
+                m1--;
+                d1 += DaysInMonth(y2, m2);
+            }
+            if (m1 < m2) {
+                y1--;
+                m1 += 12;
+            }
+            return [y1 - y2, m1 - m2, d1 - d2];
+        }
+
+        function calage() {
+            let date = new Date(document.birthday.bday.value);
+            let calday = date.getDate();
+            let calmon = date.getMonth() + 1;
+            let calyear = date.getFullYear();
+
+            if (isNaN(calday) || isNaN(calmon) || isNaN(calyear)) {
+                alert("Please, Enter your Date of Birth properly.");
+            } else {
+                var curd = new Date(curyear, curmon - 1, curday);
+                var cald = new Date(calyear, calmon - 1, calday);
+                var diff =
+                    Date.UTC(curyear, curmon, curday, 0, 0, 0) - Date.UTC(calyear, calmon, calday, 0, 0, 0);
+                var dife = datediff(curd, cald);
+                document.birthday.age.value = dife[0] + " years, " + dife[1] + " months, and " + dife[2] + " days";
+                var monleft = (dife[0] * 12) + dife[1];
+                var secleft = diff / 1000 / 60;
+                var hrsleft = secleft / 60;
+                var daysleft = hrsleft / 24;
+                document.birthday.months.value = monleft + " Months since your birth";
+                document.birthday.daa.value = daysleft + " days since your birth";
+                document.birthday.hours.value = hrsleft + " hours since your birth";
+                document.birthday.min.value = secleft + " minutes since your birth";
+                var as = parseInt(calyear) + dife[0] + 1;
+                var diff =
+                    Date.UTC(as, calmon, calday, 0, 0, 0) - Date.UTC(curyear, curmon, curday, 0, 0, 0);
+                var datee = diff / 1000 / 60 / 60 / 24;
+                document.birthday.nbday.value = datee + " days left for your next birthday";
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="pi">
+        <img id="pic" src="new logo 1.png" alt="Logo">
+    </div>
+    <header>
+
+
+
+
+
+        <div class="content">
+            <div class="main">
+                <main>
+                    <h1>Online Age Calculator</h1>
+                    <div class="subtitle">
+                        <h2>Calculate Age from Date of Birth</h2>
+                    </div>
+                    <form name="birthday">
+                        <div class="form-group">
+                            <label for="bday"><b>Enter your Date of Birth:</b></label>
+                            <input class="form-control" type="date" id="bday" name="bday" value="" min="1950-01-01"
+                                max="2020-12-31" required>
+                        </div>
+                        <input class="btn btn-primary mt-2" name="start" onclick="calage()" value="Calculate Age"
+                            type="button">
+                        <br><br>
+                        <div class="custom-main-ad-cont">
+                            <ins class="adsbygoogle custom-main-ad" style="display:block"
+                                data-ad-client="ca-pub-3653861954311167" data-ad-slot="3333200615"
+                                data-full-width-responsive="false"></ins>
+
+                        </div> <br>
+                        <fieldset style="border: 2px solid white; padding: 10px">
+                            <legend style="width: inherit; padding: 0 10px;">Result</legend>
+                            <div class="form-group">
+                                <label for="age"><b>Your Age:</b></label>
+                                <input style="color: black;" type="text" id="age" name="age" size="28" disabled>
+                            </div>
+                            <br>
+                            <div class="mb-2"><b>You have been living for:</b></div>
+                            <div class="form-group">
+                                In months: <input style="color: black;" type="text" name="months" size="28" disabled>
+                            </div>
+                            <div class="form-group">
+                                In days: <input style="color: black;" type="text" name="daa" size="28" disabled>
+                            </div>
+                            <div class="form-group">
+                                In hours: <input style="color: black;" type="text" name="hours" size="28" disabled>
+                            </div>
+                            <div class="form-group">
+                                In minutes: <input style="color: black;" type="text" name="min" size="28" disabled>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="nbday"><b>Your next birthday will be in:</b></label>
+                                <input style="color: black;" type="text" id="nbday" name="nbday" size="28" disabled>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <br>
+
+
+            </div>
+            </main>
+        </div>
+        <footer>
+            <h1>Contact us</h1>
+            <div class="icon">
+
+                <a href="https://www.facebook.com/decentmalik.m" class="fa fa-facebook"></a>
+                <a href="https://mobile.twitter.com/Decent_malik35" class="fa fa-twitter"></a>
+            </div>
+            <ul>
+                <!-- <li><a href="https://www.facebook.com/decentmalik.m">Facebook</a></li> -->
+                <!-- <li><a href="https://mobile.twitter.com/Decent_malik35">Twitter</a></li> -->
+            </ul>
+
+        </footer>
+        <div class="copy">
+            <p>Malik &copy; 2022</p>
+        </div>
+
+
+
+
+</body>
+
+</html>

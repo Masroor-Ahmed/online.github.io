@@ -4,21 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="This is Malik Tools official website you can access a lot of free tools and premium apps totally free of cost.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon (2).ico">
-    <title>Malik Tools</title>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
+    <title>Malik Tools-Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
@@ -30,17 +18,13 @@
             background-image: linear-gradient(to right, #3378FF, #9443FE);
         }
 
-
         body {
-            height: 255vh;
+            height: 180vh;
             margin: 8px;
+            background-repeat: no-repeat;
+            background-position: fixed;
+            background-size: cover;
             padding: 2px;
-            /* background-image: url('bg 3.jpg'); */
-            /* background-repeat: no-repeat; */
-            /* background-color: rgb(58, 58, 148); */
-            /* background-position: fixed; */
-
-            /* background-size: cover; */
 
         }
 
@@ -382,9 +366,7 @@
             width: 110px;
             padding: 8px;
             margin: 14px;
-            transition-property: all;
         }
-
 
         .sim p {
             color: red;
@@ -414,7 +396,6 @@
         .app {
             border: 3px double white;
             background-color: transparent;
-            backdrop-filter: blur(2px);
             padding: 8px;
             border-radius: 4px;
         }
@@ -524,6 +505,7 @@
         .left {
             height: 10px;
             width: 19px;
+            /* border: 2px solid black; */
             padding: 8px;
             position: fixed;
             left: 0%;
@@ -536,7 +518,6 @@
             border-radius: 6px;
             align-items: center;
             z-index: 10;
-
 
 
         }
@@ -559,91 +540,17 @@
             color: white;
         }
 
-        .others li:hover {
-            background-color: rgb(209, 209, 209);
-        }
-
-
         .others ul a li {
             font-size: 18px;
             border-radius: 6px;
             color: black;
         }
 
-
-        .lap_nav {
-            display: none;
+        .others li:hover {
+            background-color: rgb(209, 209, 209);
         }
 
-        /* The side navigation menu */
-        .sidenav {
-            height: 100%;
-            /* 100% Full-height */
-            width: 0;
-            /* 0 width - change this with JavaScript */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Stay on top */
-            top: 0;
-            /* Stay at the top */
-            left: 0;
-            background-color: #111;
-            /* Black*/
-            overflow-x: hidden;
-            /* Disable horizontal scroll */
-            padding-top: 60px;
-            /* Place content 60px from the top */
-            transition: 0.5s;
-            /* 0.5 second transition effect to slide in the sidenav */
-        }
-
-        /* The navigation menu links */
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        /* When you mouse over the navigation links, change their color */
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        /* Position and style the close button (top right corner) */
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-        #main {
-            transition: margin-left .5s;
-            padding: 20px;
-        }
-
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-
-
-
-
-
-        @media (min-width: 666px) and (max-width:2000px) {
+        @media (min-width: 666px) {
             .others {
                 position: relative;
                 top: 4%;
@@ -662,74 +569,10 @@
                 color: white;
             }
 
-
-
             .others ul a li {
                 font-size: 18px;
                 border-radius: 6px;
                 color: black;
-            }
-
-            .mbl_nav {
-                display: none;
-            }
-
-            .lap_nav {
-                display: block;
-                box-shadow: 5px 5px 20px -20px black;
-                position: absolute;
-                width: 31%;
-                backdrop-filter: blur(10px);
-                border-radius: 4px;
-            }
-
-            .lap_nav ul {
-                display: flex;
-            }
-
-
-            .lap_nav li {
-                list-style: none;
-                margin: 10px;
-                font-size: 20px;
-            }
-
-            .lap_nav li a:hover {
-                transition: .2s;
-                color: rgb(192, 192, 192);
-                font-size: 22px;
-
-            }
-
-
-
-        }
-
-        .snoti {
-            /* border: 2px solid black; */
-            background-color: transparent;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            width: 90vw;
-        }
-
-        .alertt {
-            height: 50px;
-            position: relative;
-            outline: none;
-            border-radius: 8px;
-            border: 1px solid white;
-            background-color: transparent;
-            backdrop-filter: blur(2px);
-            top: 30%;
-            font-size: 18px;
-            width: 60vw;
-        }
-
-        @media (min-width: 490px) and (max-width:665px) {
-            .mbl_nav {
-                width: 20%;
             }
         }
     </style>
@@ -737,76 +580,23 @@
 
 <body>
     <script src="//code.tidio.co/0cpqglvkbt7hvfstzxmqtpja5bylucxd.js" async></script>
-
-    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
-
-    <script src="js/scrollmagic/minified/ScrollMagic.min.js"></script>
-
-    <script src="js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
-    <!-- Navigation for laptop -->
-    <div class="lap_nav">
-        <ul>
-            <li><a href="Help.html">Help</a></li>
-            <li><a href="About us.html">About us</a></li>
-        </ul>
-    </div>
-    <!-- Navigation for mobile -->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="Help.html">Help</a>
-        <a href="About us.html">About us</a>
-        <a href="https://www.facebook.com/decentmalik.m">Contact me</a>
-
-    </div>
-
-    <!-- Use any element to open the sidenav -->
-    <span style="font-size: 28px; margin:2px;" onclick="openNav()">&#9776;</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <header>
 
         <div class="pi">
             <img id="pic" src="new logo 1.png" alt="Logo">
         </div>
-        <div class="snoti">
 
-
-            <button class="alertt" onclick="myVar = setTimeout(myFunction, 0)">Is this website or apps are
-                secure? <span style="color: red;"> Click here! </span></button>
-
-
-
-            <script>
-                function myFunction() {
-                    alert("🚫 This website and all apps available on this site are 100% secure, feel free to surf... 😊");
-                }
-            </script>
-        </div>
-        <p> Hey visitor! Welcome to <span style="font-weight:bolder; color: rgb(231, 245, 41);">Malik tool-kit.
-            </span>
+        <p> Hey visitor! Welcome to <span style="font-weight:bolder; color: rgb(231, 245, 41);">Malik tool-kit. </span>
             We are
             trying to provide best services to users. You can use many tools here totally free of cost.</p>
 
     </header>
-    <a href="page2.html">
-        <div class="right">&rarr;</div>
-    </a>
     <!-- <a href="">
-        <div class="left">&larr;</div>
+        <div class="right">&rarr;</div>
     </a> -->
+    <a href="page3.html">
+        <div class="left">&larr;</div>
+    </a>
     <div class="app">
         <a href="apps.html">Download useful premium apps for free
             <div class="app_link">Click here</div>
@@ -822,78 +612,40 @@
     </div>
     <div class="an">
         <div class="in"></div>
-
     </div>
-    <!-- <script>
-        alert("🚫 This website and apps available on this site are 100% secure, feel free to surf... 😊");
-    </script> -->
 
-    <!-- <script>
-        function init() {
-            var count = 5;
-            var counter = setInterval(timer, 1000);
-            function timer() {
-                count = count - 1;
-                if (count == 0) {
-                    alert("🚫 This website and apps available on this site are 100% secure, feel free to surf... 😊")
-                    window.location = "https://maliktools.000webhostapp.com/";
-                    return;
-                }
-            }
-        }
-        window.onload = init;
-    </script> -->
-    <div class="sim">
-        <h1>SIM ownership & Info</h1>
-        <div class="sims">
-            <div class="db">
-                <a href="https://livefinder.pk/location/"> <img src="tracker.png" alt="" class="card_pic">
-                    Live Tracker <div class="info">You can Track any number with live location and advance
-                        details</div>
-                </a>
-
-            </div>
-            <div class="db">
-                <a href="https://sims.pakeservices.pk/2022/allsims/"> <img src="sim.png" alt="" class="card_pic"> SIM
-                    Database 1 <div class="info">You can cheak any SIM's info with owner's name, address and
-                        CNIC</div>
-                </a>
-
-            </div>
-
-
-            <div class="db">
-                <a href="https://livefinder.pk/search/"> <img src="sim 2.png" alt="" class="card_pic"> SIM
-                    Database 2<div class="info">You can cheak any SIM's info with owner's name, address and CNIC
-                    </div>
-                </a>
-
-            </div>
-            <div class="db">
-                <a href="https://cnic.com.pk/"> <img src="cnic.png" alt="" class="card_pic">
-                    CNIC info<div class="info">You can cheak CNIC info with owner's name, address and phone
-                        numbers
-                    </div> </a>
-
+    <div class="tools">
+        <h1>Tools</h1>
+        <div class="toolss">
+            <div class="card"><a href="https://gamitisa.com/tools/tts/"> <img src="text to audio.png" class="card_pic">
+                    Text to Audio <div class="info">Here you can convert your text into Audio </div></a></div>
+            <div class="card"><a href="https://gamitisa.com/tools/bmi-calc/"> <img src="bmi.png" class="card_pic">
+                    BMI Calculator<div class="info"> <span style="font-size: 13px;"> You can cheak you are underweigth,
+                            Overweight or normal by entrying your weight and height</span> </div></a></div>
+            <div class="card"><a href="age.html"> <img src="age.png" class="card_pic">
+                    Age Calculator<div class="info">You can calculate your excact age by entrying your Date of birth
+                    </div></a></div>
+            <div class="card"><a href="fancy text.html"> <img src="fancy.png" class="card_pic">
+                    Fancy
+                    Text Generator<div class="info">You can convert your simple and boring text into stylish and fancy
+                        text</div> </a>
             </div>
         </div>
-        <p>New Databases will be added soon.</p>
     </div>
+
     <div class="others">
         <ul>
+            <a href="index.html">
+                <li>SIM details</li>
+            </a>
             <a href="page2.html">
                 <li>Cards Maker</li>
             </a>
             <a href="page3.html">
-                <li>Vehical details</li>
-            </a>
-
-            <a href="page4.html">
-                <li>Tools</li>
+                <li>Vehical Details</li>
             </a>
         </ul>
     </div>
-
     <script>
         // alert("This site is 100% secure, so feel free to surf");
     </script>
